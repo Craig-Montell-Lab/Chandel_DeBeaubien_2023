@@ -1,0 +1,1 @@
+This code generates fictive mosquito walking bouts used to generate model for mosquito walking behavior. 
