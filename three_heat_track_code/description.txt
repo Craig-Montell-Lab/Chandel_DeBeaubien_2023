@@ -1,0 +1,1 @@
+Code used to analyze preference of Aedes exposed to conductive, convective, and infrared heat. 
