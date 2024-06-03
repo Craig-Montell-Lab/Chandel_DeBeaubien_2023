@@ -1,0 +1,59 @@
+This code requires a MATLAB installation with Image Processing and Computer Vision Toolbox.
+
+For MATLAB system requirements please visit: https://www.mathworks.com/support/requirements/matlab-system-requirements.html
+
+This code has been tested on Windows and Mac operating systems. This code has been tested on MATLAB vserions R2019a and later. This code does not require any non-standard software.
+
+Installation Guide
+1. Install MATLAB along with Image Processing and Computer Vision Toolbox. MATLAB installation time will vary depending on machine. For more detailed description of MATLAB installs please visit mathworks.com.
+2. Download the demo folder from GitHub.
+3. Set the Demo folder as your current folder (directory).
+4. No further installation required.
+
+
+Capturing Recording Zones:
+
+ZoneMaster.mat is a file containing the scoring zones 
+ExperimentNames.mat is a file containing the file names of experiment recordings
+OutNames.mat is a file containing the output file names
+
+Run ZoneCapture.m by typing "ZoneCapture" into the command line
+
+Type in the filename including file extension (.mov) that you wish to capture zones from.
+
+Select the vertices of the scoring zones. The default configuration is to capture two zones (left and right) by selecting the left zone vertices in clockwise fashion starting at the top left, followed by the right zone in the same manner. 
+
+This can be modified if you have different numbers or shapes of scoring zones.
+
+Scoring Behavior Assays:
+Scoring can be run on individual assays or batch process multiple assays by specifying the assay number in the Range variable of TrackExpressCommandv1.m
+
+Example:
+Range = 1 
+This will analyze the recording in index 1 of ExperimentNames.mat
+
+Range = 1:10
+This will analyze the first ten recordings of ExperimentNames.mat
+
+Once the range has been selected run TrackExpressCommandv1.m
+
+Relevant outputs:
+final_pts - all the final position data used for assay metrics
+newPI - Preference index of assay
+
+newPI should be 0.74 in the example video provided
+
+SeekingScore - Host Seeking Index of assay
+
+SeekingScore should be 5.37 in the example video provided
+
+Optimizing Image Segmentation and Object Detection:
+Image segmentation is handled by segmentImage5v1.m
+
+Modify the erode and sens variables in MosquitoTrackerExpressv1.m to change image segmentation performance based on your image qualities. 
+
+Modify the sizes variable to set upper and lower limits on acceptable mosquito body sizes.
+
+This code anaylyzes the provided 5 minute example data in roughly 1 minute.
+
+
